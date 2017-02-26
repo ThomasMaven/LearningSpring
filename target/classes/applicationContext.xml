@@ -11,6 +11,7 @@
 		<constructor-arg index="0" ref="customerRepo"></constructor-arg>
 	</bean>
 	<bean name="customerServiceAutowire" class="eu.tomaka.service.CustomerServiceImpl" autowire="constructor">
-		<!--   <constructor-arg index="0" ref="customerRepo"></constructor-arg> -->
+	</bean>
+	<bean name="customerServiceAutowireByType" class="eu.tomaka.service.CustomerServiceImpl" autowire="byType">
 	</bean>
 </beans>

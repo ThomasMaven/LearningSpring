@@ -22,6 +22,10 @@ public class App {
 		//Autowire
 		CustomerService serviceAutowire = appContext.getBean("customerServiceAutowire", CustomerService.class);
 		System.out.println(serviceAutowire.findAll().get(0).getName());
+		
+		//Autowire by type
+		CustomerService serviceAutowireByType = appContext.getBean("customerServiceAutowireByType", CustomerService.class);
+		System.out.println(serviceAutowireByType.findAll().get(0).getName());
 	}
 
 }
