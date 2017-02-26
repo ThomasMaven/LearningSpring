@@ -12,9 +12,13 @@ public class App {
 		
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
+		//setter injection
 		CustomerService service = appContext.getBean("customerService", CustomerService.class);
-		
 		System.out.println(service.findAll().get(0).getName());
+		
+		//constructor injection
+		CustomerService serviceConstruct = appContext.getBean("customerServiceConst", CustomerService.class);
+		System.out.println(serviceConstruct.findAll().get(0).getName());
 	}
 
 }

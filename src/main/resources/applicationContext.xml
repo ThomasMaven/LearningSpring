@@ -7,5 +7,7 @@
 	<bean name="customerService" class="eu.tomaka.service.CustomerServiceImpl">
 		<property name="customerRepo" ref="customerRepo"></property>
 	</bean>
-	
+	<bean name="customerServiceConst" class="eu.tomaka.service.CustomerServiceImpl">
+		<constructor-arg index="0" ref="customerRepo"></constructor-arg>
+	</bean>
 </beans>
