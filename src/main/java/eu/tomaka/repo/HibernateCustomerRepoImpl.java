@@ -3,8 +3,11 @@ package eu.tomaka.repo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import eu.tomaka.module.Customer;
 
+@Repository("customerRepository")
 public class HibernateCustomerRepoImpl implements CustomerRepo {
 
 	/* (non-Javadoc)
