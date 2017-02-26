@@ -4,15 +4,27 @@ import java.util.List;
 
 import eu.tomaka.module.Customer;
 import eu.tomaka.repo.CustomerRepo;
-import eu.tomaka.repo.HibernateCustomerRepoImpl;
 
 
 
 
 public class CustomerServiceImpl implements CustomerService {
 	
-	private CustomerRepo customerRepo = new HibernateCustomerRepoImpl();
+	private CustomerRepo customerRepo;
 	
+	public CustomerServiceImpl() {
+		
+	}
+
+	public CustomerServiceImpl(CustomerRepo customerRepo) {
+		this.customerRepo = customerRepo;
+		
+	}
+	
+	public void setCustomerRepo(CustomerRepo customerRepo) {
+		this.customerRepo = customerRepo;
+	}
+
 
 	/* (non-Javadoc)
 	 * @see eu.tomaka.service.CustomerService#findAll()
