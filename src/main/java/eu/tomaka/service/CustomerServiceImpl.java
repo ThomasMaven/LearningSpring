@@ -2,16 +2,19 @@ package eu.tomaka.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import eu.tomaka.module.Customer;
 import eu.tomaka.repo.CustomerRepo;
-import eu.tomaka.repo.HibernateCustomerRepoImpl;
 
 
 
-
+@Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 	
-	private CustomerRepo customerRepo = new HibernateCustomerRepoImpl();
+	@Autowired
+	private CustomerRepo customerRepo;
 	
 
 	/* (non-Javadoc)
