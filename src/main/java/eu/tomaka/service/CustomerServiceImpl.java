@@ -13,9 +13,14 @@ import eu.tomaka.repo.CustomerRepo;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 	
-	@Autowired
+	//@Autowired
 	private CustomerRepo customerRepo;
 	
+	@Autowired
+	public void setCustomerRepo(CustomerRepo customerRepo) {
+		this.customerRepo = customerRepo;
+	}
+
 
 	/* (non-Javadoc)
 	 * @see eu.tomaka.service.CustomerService#findAll()
