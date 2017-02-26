@@ -3,12 +3,15 @@ package eu.tomaka.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import eu.tomaka.module.Customer;
 import eu.tomaka.repo.CustomerRepo;
 
+
 @Service("customerService")
+@Scope("singleton")
 public class CustomerServiceImpl implements CustomerService {
 
 	private CustomerRepo customerRepo;
