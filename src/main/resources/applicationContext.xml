@@ -12,6 +12,6 @@
 	</bean>
 	<bean name="customerServiceAutowire" class="eu.tomaka.service.CustomerServiceImpl" autowire="constructor">
 	</bean>
-	<bean name="customerServiceAutowireByType" class="eu.tomaka.service.CustomerServiceImpl" autowire="byType" scope="singleton">
+	<bean name="customerServiceAutowireByType" class="eu.tomaka.service.CustomerServiceImpl" autowire="byType" scope="prototype">
 	</bean>
 </beans>
