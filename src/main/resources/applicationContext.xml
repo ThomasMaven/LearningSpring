@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean name="customerRepo" class="eu.tomaka.repo.HibernateCustomerRepoImpl"></bean>
+	<context:annotation-config></context:annotation-config>
+	<context:property-placeholder location="app.properties"/>
+	<bean name="customerRepo" class="eu.tomaka.repo.HibernateCustomerRepoImpl">
+	</bean>
 	<bean name="customerService" class="eu.tomaka.service.CustomerServiceImpl">
 		<property name="customerRepo" ref="customerRepo"></property>
 	</bean>
 	<bean name="customerServiceConst" class="eu.tomaka.service.CustomerServiceImpl">
 		<constructor-arg index="0" ref="customerRepo"></constructor-arg>
+	</bean>
+	<bean name="customerServiceAutowire" class="eu.tomaka.service.CustomerServiceImpl" autowire="constructor">
+	</bean>
+	<bean name="customerServiceAutowireByType" class="eu.tomaka.service.CustomerServiceImpl" autowire="byType" scope="prototype">
 	</bean>
 </beans>

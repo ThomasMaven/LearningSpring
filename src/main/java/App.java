@@ -2,7 +2,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import eu.tomaka.service.CustomerService;
-import eu.tomaka.service.CustomerServiceImpl;
 
 public class App {
 
@@ -19,6 +18,21 @@ public class App {
 		//constructor injection
 		CustomerService serviceConstruct = appContext.getBean("customerServiceConst", CustomerService.class);
 		System.out.println(serviceConstruct.findAll().get(0).getName());
+		
+		//Autowire
+		CustomerService serviceAutowire = appContext.getBean("customerServiceAutowire", CustomerService.class);
+		System.out.println(serviceAutowire.findAll().get(0).getName());
+		
+		//Autowire by type
+		CustomerService serviceAutowireByType = appContext.getBean("customerServiceAutowireByType", CustomerService.class);
+		System.out.println(serviceAutowireByType.findAll().get(0).getName());
+		System.out.println(serviceAutowireByType);
+		
+		//Autowire by type2
+		CustomerService serviceAutowireByType2 = appContext.getBean("customerServiceAutowireByType", CustomerService.class);
+		System.out.println(serviceAutowireByType2.findAll().get(0).getName());
+		System.out.println(serviceAutowireByType2);
+
 	}
 
 }
